@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .pink-gradient {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+        }
+        .section-transition {
+            transition: all 0.5s ease;
+        }
+        .active-tab {
+            border-bottom: 4px solid #ec407a;
+            font-weight: bold;
+        }
+        .profile-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="pink-gradient min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="https://th.bing.com/th/id/OIP.poVb1mcfyqNwl_0F58-66gHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" alt="โลโก้คณะ" class="h-10">
+                    <span class="font-semibold text-gray-800 text-lg">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" onclick="showPage('home')" class="py-2 px-3 text-gray-700 hover:text-pink-600 transition active-tab">หน้าหลัก</a>
+                    <a href="#" onclick="showPage('profile1')" class="py-2 px-3 text-gray-700 hover:text-pink-600 transition">สมาชิก 1</a>
+                    <a href="#" onclick="showPage('profile2')" class="py-2 px-3 text-gray-700 hover:text-pink-600 transition">สมาชิก 2</a>
+                </div>
+                <button class="md:hidden focus:outline-none" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-2 pb-2">
+                <a href="#" onclick="showPage('home')" class="block py-2 px-4 text-gray-700 hover:bg-pink-100">หน้าหลัก</a>
+                <a href="#" onclick="showPage('profile1')" class="block py-2 px-4 text-gray-700 hover:bg-pink-100">สมาชิก 1</a>
+                <a href="#" onclick="showPage('profile2')" class="block py-2 px-4 text-gray-700 hover:bg-pink-100">สมาชิก 2</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Home Page -->
+        <div id="home" class="section-transition">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">42BKK PROJECT</h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">นวัตกรรมและเทคโนโลยีการออกแบบ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">เกี่ยวกับคณะ</h2>
+                    <p class="text-gray-600 mb-4">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี มีเป้าหมายในการผลิตบัณฑิตที่มีความรู้ความสามารถด้านวิศวกรรมศาสตร์และเทคโนโลยีการศึกษา</p>
+                    <div class="flex justify-center">
+                        <img src="https://cdn.discordapp.com/attachments/1385514789668782124/1385516210401050704/Capture.PNG?ex=68565a06&is=68550886&hm=8548ed305f32f2cea10b2017db6e435d5e4fffbf2395f3fdb81262e0952e1aba&" alt="คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี" class="rounded-lg">
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">ข่าวสารและกิจกรรม</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="bg-pink-100 text-pink-800 rounded-full p-1 mr-3">
+                                <i class="fas fa-newspaper text-sm"></i>
+                            </span>
+                            <span>ประชุมวิชาการประจำปี 2566</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-pink-100 text-pink-800 rounded-full p-1 mr-3">
+                                <i class="fas fa-calendar-alt text-sm"></i>
+                            </span>
+                            <span>เปิดรับสมัครนักศึกษาใหม่ ปีการศึกษา 2567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-pink-100 text-pink-800 rounded-full p-1 mr-3">
+                                <i class="fas fa-graduation-cap text-sm"></i>
+                            </span>
+                            <span>พิธีพระราชทานปริญญาบัตร ประจำปี 2565</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">สมาชิกในทีม</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Member 1 -->
+                <div class="profile-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-pink-300 to-pink-400 flex items-center justify-center">
+                        <img src="https://cdn.discordapp.com/attachments/1385514789668782124/1385515978062041169/IMG_9774.png?ex=685659ce&is=6855084e&hm=f3029864c581f1e908ca66715aba6434e445cc8967062e63e03e2442e3dc0966& " alt="สมาชิก 1" class="h-32 w-32 rounded-full border-4 border-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">นางสาวรุ่งไพลิน รองสุพรรณ์</h3>
+                        <p class="text-gray-600 mb-4">นักศึกษาสาขานวัตกรรมและเทคโนโลยีการออกแบบ ปี 1</p>
+                        <button onclick="showPage('profile1')" class="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg transition">ดูประวัติ</button>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="profile-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-pink-300 to-pink-400 flex items-center justify-center">
+                        <img src="https://cdn.discordapp.com/attachments/1385514789668782124/1385516964801286265/E7224AD1-E98B-45CD-ACB6-856A6F375830.jpg?ex=68565aba&is=6855093a&hm=20620f96f2a04a830278e085cafe99ed2f5fb47e6f46a31da719d96b2d5d45ea&" alt="สมาชิก 2" class="h-32 w-32 rounded-full border-4 border-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">นางสาว กฤษติกา หาญเผชิญโชค</h3>
+                        <p class="text-gray-600 mb-4">นักศึกษาสาขานวัตกรรมและเทคโนโลยีการออกแบบ ปี 1</p>
+                        <button onclick="showPage('profile2')" class="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg transition">ดูประวัติ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 1 Page -->
+        <div id="profile1" class="section-transition hidden">
+            <button onclick="showPage('home')" class="mb-6 flex items-center text-pink-600 hover:text-pink-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i> กลับหน้าหลัก
+            </button>
+
+            <!-- Section 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                        <img src="https://cdn.discordapp.com/attachments/1385514789668782124/1385515978062041169/IMG_9774.png?ex=685659ce&is=6855084e&hm=f3029864c581f1e908ca66715aba6434e445cc8967062e63e03e2442e3dc0966&" alt="สาขานวัตกรรมและเทคโนโลยีการออกแบบ" class="rounded-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</h2>
+                        <h3 class="text-2xl text-pink-600 mb-4">สาขานวัตกรรมและเทคโนโลยีการออกแบบ</h3>
+                        <p class="text-gray-600">นางสาวรุ่งไพลิน รองสุพรรณ์</p>
+                        <p class="text-gray-600">รหัสนักศึกษา 68070XXX</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">เกี่ยวกับสาขาวิชา</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ประวัติความเป็นมา</h3>
+                        <p class="text-gray-600">สาขานวัตกรรมและเทคโนโลยีการออกแบบ ก่อตั้งขึ้นในปี พ.ศ. 2545 โดยมีวัตถุประสงค์เพื่อผลิตบัณฑิตที่มีความรู้ความสามารถด้านการออกแบบเชิงนวัตกรรมและเทคโนโลยีสมัยใหม่</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">วิชาที่เรียน</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>การออกแบบกราฟิก</li>
+                            <li>การออกแบบประสบการณ์ผู้ใช้</li>
+                            <li>การออกแบบผลิตภัณฑ์</li>
+                            <li>เทคโนโลยีการออกแบบ 3 มิติ</li>
+                            <li>นวัตกรรมการออกแบบ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">ติดต่อ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ข้อมูลติดต่อ</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-3 text-pink-500"></i>
+                                <span>67X04X@kmitl.ac.th</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone mr-3 text-pink-500"></i>
+                                <span>081-234-5678</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-pink-500"></i>
+                                <span>คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี สจล.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ติดตามผลงาน</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-500 text-white p-2 rounded-full hover:bg-pink-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile 2 Page -->
+        <div id="profile2" class="section-transition hidden">
+            <button onclick="showPage('home')" class="mb-6 flex items-center text-pink-600 hover:text-pink-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i> กลับหน้าหลัก
+            </button>
+
+            <!-- Section 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                        <img src="https://cdn.discordapp.com/attachments/1385514789668782124/1385516964801286265/E7224AD1-E98B-45CD-ACB6-856A6F375830.jpg?ex=68565aba&is=6855093a&hm=20620f96f2a04a830278e085cafe99ed2f5fb47e6f46a31da719d96b2d5d45ea&" alt="สาขานวัตกรรมและเทคโนโลยีการออกแบบ" class="rounded-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</h2>
+                        <h3 class="text-2xl text-pink-600 mb-4">สาขานวัตกรรมและเทคโนโลยีการออกแบบ</h3>
+                        <p class="text-gray-600">นางสาว กฤษติกา หาญเผชิญโชค</p>
+                        <p class="text-gray-600">รหัสนักศึกษา 68070XXX</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">เกี่ยวกับสาขาวิชา</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">โอกาสในการทำงาน</h3>
+                        <p class="text-gray-600">บัณฑิตสามารถทำงานในตำแหน่งต่างๆ เช่น นักออกแบบกราฟิก, นักออกแบบ UX/UI, นักออกแบบผลิตภัณฑ์, นักออกแบบบรรจุภัณฑ์, ที่ปรึกษาด้านการออกแบบ และผู้ประกอบการด้านการออกแบบ</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ทักษะที่ได้รับ</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>ทักษะการออกแบบเชิงสร้างสรรค์</li>
+                            <li>ทักษะการใช้โปรแกรมออกแบบต่างๆ</li>
+                            <li>ทักษะการคิดวิเคราะห์และแก้ปัญหา</li>
+                            <li>ทักษะการทำงานเป็นทีม</li>
+                            <li>ทักษะการนำเสนอผลงาน</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">ติดต่อ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ข้อมูลติดต่อ</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-3 text-pink-500"></i>
+                                <span>670304X@kmitl.ac.th</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone mr-3 text-pink-500"></i>
+                                <span>082-345-6789</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-pink-500"></i>
+                                <span>คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี สจล.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">ผลงานและกิจกรรม</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">ออกแบบเว็บไซต์</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">ออกแบบแอปพลิเคชัน</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">ออกแบบผลิตภัณฑ์</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">กิจกรรมนักศึกษา</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="https://th.bing.com/th/id/OIP.poVb1mcfyqNwl_0F58-66gHaHa?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" alt="โลโก้คณะ" class="h-8 mr-3">
+                        <span class="font-semibold text-gray-800">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-6 pt-6 text-center text-gray-500">
+                <p>© 42BKK </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show the selected page and hide others
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.section-transition').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            // Update active tab in navigation
+            updateActiveTab(pageId);
+        }
+
+        // Update active tab in navigation
+        function updateActiveTab(pageId) {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('active-tab');
+            });
+
+            let activeLink;
+            if (pageId === 'home') {
+                activeLink = document.querySelector('nav a[onclick="showPage(\'home\')"]');
+            } else if (pageId === 'profile1') {
+                activeLink = document.querySelector('nav a[onclick="showPage(\'profile1\')"]');
+            } else if (pageId === 'profile2') {
+                activeLink = document.querySelector('nav a[onclick="showPage(\'profile2\')"]');
+            }
+
+            if (activeLink) {
+                activeLink.classList.add('active-tab');
+            }
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Initialize - show home page by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
+
